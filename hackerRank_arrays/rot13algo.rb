@@ -51,4 +51,5 @@ def rot13(secret_messages)
         return newArr
 end
 
-rot13(secret_messages)
+p rot13(secret_messages)
+# => ["delta", "meet at chocolate corner", "ten men", "two backup teams", "midnight extraction"
