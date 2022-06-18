@@ -10,7 +10,6 @@ const checkbrackets = (text) => {
     let closingbrck = [']', ')', '}']
 
     
-
     if (closingbrck.includes((text[0]))) {
         return 1
     }
@@ -22,31 +21,40 @@ const checkbrackets = (text) => {
         if(openingbrck.includes(currentChar) ) {
             res_stack.push(currentChar)
         }
-        if (closingbrck.indexOf(currentChar)) {
-            const closingBracInd = closingbrck.indexOf(currentChar)
-            const lastElemInd = res_stack.indexOf(res_stack.length-1) 
-            
-            if(closingBracInd === lastElemInd) {
+        else if (closingbrck.includes(currentChar)) {
+            // const closingbrck.indexOf(currentChar) = closingbrck.indexOf(currentChar)
+            // const res_stack.indexOf(res_stack.length-1)  = res_stack.indexOf(res_stack.length-1) 
+            if(closingbrck.indexOf(currentChar) == openingbrck.indexOf(res_stack[ res_stack.length-1])) {
                 res_stack.pop()
-            }else if(!closingBracInd === lastElemInd) {
-                return x=1
+            }
+            else if( closingbrck.indexOf(currentChar) !== openingbrck.indexOf(res_stack[res_stack.length-1]) ) {
+                return x+1
             }
         }
+        
     }
 
-    return 'success'
-
+    if (res_stack.length === 0) {
+        return 'Success'
+    }else if (res_stack.length) {
+        return text.length
+    }
 }
+
+
+// module.exports = checkbrackets
 for(let x = 1; x<55; x++) {
     try { 
          let data
+         let ans
      x < 10 ? data = fs.readFileSync(`tests/0${x}`, 'utf8') : data =  fs.readFileSync(`tests/${x}`, 'utf8')
-    // console.log(data.toString());    
-    console.log(checkbrackets(data.toString()), x) 
+     x < 10 ? ans = fs.readFileSync(`tests/0${x}.a`, 'utf8') : ans =  fs.readFileSync(`tests/${x}.a`, 'utf8')
+    const res =  checkbrackets(data.toString().trim())
+    ans = ans?.toString().trim()
+    console.log(res, ans, x) 
 } catch(e) {
     console.log('Error:', e.stack);
 }
 }
 
 
-const text = '{}[]'
