@@ -17,17 +17,16 @@ const checkbrackets = (text) => {
     for(let x = 0; x < text.length; x++) {
         const currentChar = text[x]
 
+        let lastItemInRes = res_stack[ res_stack.length-1]
 
         if(openingbrck.includes(currentChar) ) {
-            res_stack.push(currentChar)
+            res_stack.push({ind: x, val: currentChar})
         }
         else if (closingbrck.includes(currentChar)) {
-            // const closingbrck.indexOf(currentChar) = closingbrck.indexOf(currentChar)
-            // const res_stack.indexOf(res_stack.length-1)  = res_stack.indexOf(res_stack.length-1) 
-            if(closingbrck.indexOf(currentChar) == openingbrck.indexOf(res_stack[ res_stack.length-1])) {
+            if(closingbrck.indexOf(currentChar) == openingbrck.indexOf(lastItemInRes?.val)) {
                 res_stack.pop()
             }
-            else if( closingbrck.indexOf(currentChar) !== openingbrck.indexOf(res_stack[res_stack.length-1]) ) {
+            else if( closingbrck.indexOf(currentChar) !== openingbrck.indexOf(lastItemInRes?.val) ) {
                 return x+1
             }
         }
@@ -37,10 +36,14 @@ const checkbrackets = (text) => {
     if (res_stack.length === 0) {
         return 'Success'
     }else if (res_stack.length) {
-        return text.length
+        return res_stack[res_stack.length-1].ind+1
     }
 }
 
+
+// const text = '[](()'
+
+// console.log(checkbrackets(text))
 
 // module.exports = checkbrackets
 for(let x = 1; x<55; x++) {
@@ -51,7 +54,7 @@ for(let x = 1; x<55; x++) {
      x < 10 ? ans = fs.readFileSync(`tests/0${x}.a`, 'utf8') : ans =  fs.readFileSync(`tests/${x}.a`, 'utf8')
     const res =  checkbrackets(data.toString().trim())
     ans = ans?.toString().trim()
-    console.log(res, ans, x) 
+    console.log(res == ans, x) 
 } catch(e) {
     console.log('Error:', e.stack);
 }
