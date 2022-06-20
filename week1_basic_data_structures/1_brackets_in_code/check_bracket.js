@@ -1,9 +1,5 @@
 var fs = require('fs');
 
-
-
-
-
 const checkbrackets = (text) => {
     let res_stack = []
     let openingbrck = ['[', '(', '{']
