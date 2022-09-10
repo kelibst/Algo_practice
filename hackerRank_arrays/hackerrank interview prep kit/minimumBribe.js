@@ -1,24 +1,30 @@
 function minimumBribes(q) {
   // // Write your code here
-  let bribe = 0;
-  let dif = 0;
-  let canBribe = [];
-  for (let x = 0; x < q.length; x++) {
-    let originalVal = x + 1;
-    if (originalVal !== q[x]) {
-      if (dif > 0 && q[x] - originalVal <= 0) {
-        dif = dif - 1;
-        continue;
-      }
-      dif = Math.abs(originalVal - q[x]);
-
-      if (dif >= 3) {
+  // To solve it perform minimum swap on 2 steps
+  let swap = 0;
+  for (let x = q.length - 1; x >= 0; x--) {
+    if (q[x] !== x + 1) {
+      if (x + 1 - q[x - 1] == 0) {
+        // check if the original value is one postion away if it is swap the positons
+        let curVal = q[x];
+        q[x] = q[x - 1];
+        q[x - 1] = curVal;
+        swap += 1;
+      } else if (x + 1 - q[x - 2] == 0) {
+        // if it is two posions away swap the postions
+        let curVal = q[x];
+        let preVal1 = q[x - 1];
+        let preVal2 = q[x - 2];
+        q[x] = preVal2;
+        q[x - 1] = curVal;
+        q[x - 2] = preVal1;
+        swap += 2;
+      } else {
         console.log("Too chaotic");
-        return;
+        return "Too chaotic";
       }
-      bribe += Math.abs(dif);
     }
   }
-  console.log(bribe);
-  return bribe;
+  console.log(swap);
+  return swap;
 }
