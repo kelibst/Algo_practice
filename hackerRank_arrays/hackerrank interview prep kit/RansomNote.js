@@ -1,18 +1,15 @@
 function checkMagazine(magazine, note) {
   // Write your code here
-  // console.log(magazine)
-  // console.log(note)
   let answer = "Yes";
-  if (note.length > magazine.length) {
-    console.log("No");
-    return;
-  }
 
   for (let x = 0; x < note.length; x++) {
-    if (!magazine.includes(note[x], x)) {
+    let ind = magazine.indexOf(note[x]);
+    if (ind < 0) {
       console.log("No");
       return;
     }
+    magazine.splice(ind, 1);
+    answer = "Yes";
   }
 
   console.log(answer);
