@@ -1,0 +1,14 @@
+{
+  "name": "hackerrank_arrays",
+  "version": "1.0.0",
+  "description": "use typescript for coding challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
+}
