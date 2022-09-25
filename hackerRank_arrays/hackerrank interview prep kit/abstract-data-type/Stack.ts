@@ -1,9 +1,9 @@
 class Stack {
   #list = new Map();
-  #maxSize;
+  #maxSize = 0;
 
-  constructor(maxSize) {
-    this.#maxSize = Number(maxSize) || null;
+  constructor(maxSize = 0) {
+    this.#maxSize = Number(maxSize);
   }
 
   get size() {
@@ -39,3 +39,14 @@ class Stack {
     console.log(Array.from(this.#list.values()));
   }
 }
+
+let plate = new Stack();
+plate.push("first");
+
+plate.push("firsts");
+plate.push("firstss");
+plate.push("firsteeee");
+plate.print();
+plate.pop();
+
+plate.print();
