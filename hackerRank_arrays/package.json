@@ -4,7 +4,10 @@
   "description": "use typescript for coding challenges",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc --outDir ./dist ",
+    "clean": "rm -rf dist",
+    "start": "npm run clean && npm run build"
   },
   "author": "",
   "license": "ISC",
