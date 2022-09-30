@@ -37,7 +37,6 @@ class CircularQueue {
             if (__classPrivateFieldGet(this, _CircularQueue_front, "f") === -1) {
                 __classPrivateFieldSet(this, _CircularQueue_front, __classPrivateFieldGet(this, _CircularQueue_rear, "f"), "f");
             }
-            console.log(__classPrivateFieldGet(this, _CircularQueue_items, "f"));
         }
         else {
             console.log("queue is full");
@@ -70,7 +69,6 @@ class CircularQueue {
         else {
             let i;
             let str = "";
-            console.log(__classPrivateFieldGet(this, _CircularQueue_items, "f"));
             for (i = __classPrivateFieldGet(this, _CircularQueue_front, "f"); i !== __classPrivateFieldGet(this, _CircularQueue_rear, "f"); i = (i + 1) % __classPrivateFieldGet(this, _CircularQueue_capacity, "f")) {
                 str += __classPrivateFieldGet(this, _CircularQueue_items, "f")[i] + " ";
             }
