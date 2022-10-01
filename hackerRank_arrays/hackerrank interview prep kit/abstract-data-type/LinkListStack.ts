@@ -11,7 +11,7 @@ class LinkedListStack {
   }
 
   pop() {
-    return this.list.rmFromEnd();
+    return this.list.rmFromFront();
   }
 
   peek() {
