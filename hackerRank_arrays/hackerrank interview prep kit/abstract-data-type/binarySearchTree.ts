@@ -83,6 +83,22 @@ class BinarySearchTree {
       console.log(root.value);
     }
   }
+
+  levelOrder() {
+    //traversing a tree using a queue
+    const queue = [];
+    queue.push(this.root);
+    while (queue.length) {
+      let curr = queue.shift();
+      console.log(curr.value);
+      if (curr.left) {
+        queue.push(curr.left);
+      }
+      if (curr.right) {
+        queue.push(curr.right);
+      }
+    }
+  }
 }
 
 const best = new BinarySearchTree();
@@ -95,4 +111,4 @@ best.insert(3);
 best.insert(7);
 // best.preOrder(best.root);
 // console.log(best);
-best.postOrder(best.root);
+best.levelOrder();
