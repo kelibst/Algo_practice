@@ -1,0 +1,41 @@
+React Hooks 
+They are a type of functions that allow react functional components to hook onto the state and life cycle features
+of react.
+React provides built-in hooks like useState, useEffect, useReducer, useRef, use Callback, useContext, and useMemo 
+ we can also create your own custom hooks.
+React hooks are available from React version of 16.8
+
+The main problems which were solved by the release of hooks in React 16.8:
+
+Wrapper ****Hell
+Classes
+Side effect
+
+advantages of react hooks
+
+useContext help with components tree readability
+
+The "useContext" hook has been a blessing for greatly improving the readability of JSX as it allows context values to be read outside of JSX. 
+
+
+useEffect combines  effects
+
+instead of using componenentdidmount and later unmount with componenentwillUnmount
+
+
+Ability to reuse logic
+custom hooks are a great way fo shawing logic accross multiple components
+
+JSX stands for JavaScript XML.
+
+JSX allows us to write HTML in React.
+
+JSX makes it easier to write and add HTML in React.
+
+SX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+
+JSX converts HTML tags into react elements.
+https://www.freecodecamp.org/news/jsx-in-react-introduction/
+
+So from all the above examples, it's clear that JSX is converted to a React.createElement call and it's then converted to its object representation.
+

@@ -28,6 +28,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (rating === null || rating === void 0 ? void 0 : rating.value) {
         let res = StringChallenge(rating.value);
+        resString = "";
         res.forEach((res) => (resString += `<img src="assets/${res}.webp" class="rate-star" />`));
         result.innerHTML = resString;
     }
