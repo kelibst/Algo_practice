@@ -39,3 +39,19 @@ https://www.freecodecamp.org/news/jsx-in-react-introduction/
 
 So from all the above examples, it's clear that JSX is converted to a React.createElement call and it's then converted to its object representation.
 
+Virtual DOM
+
+it is the virtual representation of a UI is kept in memory and synced with the real DOM by a library such as ReactDom
+
+what is Next.js?
+Next.js is a React framework for developing single page Javascript applications. 
+Next.js is a JavaScript framework that enables you to build superfast and extremely user-friendly static websites, as well as web applications using React.
+
+This feature allows Next.js to build hybrid applications that contain both server-side rendered and statically generated pages.
+
+Another big reason to choose Next.js is its SEO efficiency.
+
+Growing organic traffic faster
+Ranking your high intent keywords higher
+Outperforming competitors easier
+Be more visible to potential customers
