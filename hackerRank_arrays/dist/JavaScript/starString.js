@@ -33,8 +33,3 @@ form.addEventListener("submit", (e) => {
         result.innerHTML = resString;
     }
 });
-// console.log(StringChallenge("2.5"));
-// console.log(StringChallenge("1.3"));
-// console.log(StringChallenge("2.9"));
-// console.log(StringChallenge("6"));
-// console.log(StringChallenge("1.7"));

@@ -1,0 +1,17 @@
+How to Implement Polyfills
+Another important interview question is How to implement polyfills of the map and filter array methods.
+
+A polyfill is a code snippet (in terms of JavaScript web architecture) used for modern world functionalities on older browsers that do not implement it natively.
+
+Simply put, a polyfill is a custom implementation of native JavaScript functions. Sort of a create your own .map() or .filter() method.
+
+What is Debouncing?
+This is a famous interview question with a lot of practical real world usage and implementations.
+
+Debouncing is a method of preventing a function from being invoked too often, and instead waiting a certain amount of time until it was last called before invoking it.
+
+Think of Amazon in this case. Whenever you type anything in the search bar, when you stop for AT LEAST 0.5 seconds, then the results are fetched. This is exactly what debouncing is.
+
+In order to implement debouncing, let's take an example: Generating a username for a user based on the user input.
+
+https://www.freecodecamp.org/news/prepare-for-react-technical-interviews/
