@@ -1,0 +1,1 @@
+It is a memory allocated to a js let or const var until it is initialized with a value
