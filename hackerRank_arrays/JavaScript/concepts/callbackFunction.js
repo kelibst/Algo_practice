@@ -50,3 +50,17 @@ for (
 ) {
   console.log(num);
 }
+
+function* generatePrime(max) {
+  let i = 3;
+  while (i < max) {
+    yield i;
+    i += 50;
+  }
+}
+
+const prime = generatePrime(100);
+console.log(prime.next());
+console.log(prime.next());
+
+console.log(prime.next());

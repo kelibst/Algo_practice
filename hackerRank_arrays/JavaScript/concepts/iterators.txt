@@ -9,3 +9,42 @@ The protocol states that the object must have a next() method. This method shall
 
 done - a Boolean value indicating whether the iterator has reached its last value.
 value - holds the next value in a given sequence.
+
+What is a generator?
+Anything that has the capability of defining a sequence, is a generator.
+
+Always remember this idea - a generator simply defines a sequence with the help of an iterator object; it does NOT create the sequence all at once.
+
+If a generator doesn't operate on an iterator then, by the specification, it isn't a generator and therefore not so cool!
+
+Generators gotta be cool!
+
+generator function!
+
+Generator functions are created just how we create normal functions with one slight addition - the function keyword is followed by an asterisk * symbol.
+
+This is what distinguishes a generator function from a normal function.
+
+
+What is the distinction between a generator and a regular function?​
+View Answer:
+Interview Response: Regular functions return only one value (or nothing). Generators can return (“yield”) multiple values, one after another, on-demand.
+
+Technical Response: Regular functions return only one value (or nothing). Generators can return (“yield”) multiple values, one after another, on-demand. They work great with iterables, allowing to create data-streams with ease. We need a special syntax construct to create a generator: function*, the so-called “generator function”. Generator functions behave differently from regular ones. When such a function gets called, it does not run its code. Instead, it returns a unique object, called “generator object”, to manage the execution.
+
+Can you explain the function of the generator “next” method in JavaScript?​
+View Answer:
+Interview Response: The next() method returns an object with two properties, “done” and value. The done property returns false if a value exists; otherwise, true if the value returns undefined.
+
+What generator function creation syntax is acceptable in JavaScript?​
+View Answer:
+Interview Response: Two syntaxes are used to create generators, including the pre-fixed (function*f(…)) and post-fixed ( function*f(…) ) function generator implementations. Both syntaxes are correct, but usually, the first syntax is preferred, as the star * denotes that it’s a generator function, it describes the kind, not the name, so it should stick with the function keyword.
+
+What differentiates a generator from an iterator?
+View Answer:
+Interview Response: While custom iterators are a useful tool, their creation requires careful programming due to the need to maintain their internal state explicitly. Generator functions provide a powerful alternative, and they allow you to define an iterative algorithm by writing a single function whose execution is not continuous. We use the function* syntax to create a new Generator function.
+
+
+more questions https://www.hellojavascript.info/docs/general-javascript-questions/generators-advance-interation/generators
+
+

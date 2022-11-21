@@ -1,0 +1,26 @@
+What is the distinction between a generator and a regular function?
+
+ Regular functions return only one value (or nothing). Generators can return (“yield”) multiple values, one after another, on-demand.
+
+ Technical Response: Regular functions return only one value (or nothing). Generators can return (“yield”) multiple values, one after another, on-demand. They work great with iterables, allowing to create data-streams with ease. We need a special syntax construct to create a generator: function*, the so-called “generator function”. Generator functions behave differently from regular ones. When such a function gets called, it does not run its code. Instead, it returns a unique object, called “generator object”, to manage the execution.
+
+ Can you explain the function of the generator “next” method in JavaScript?​
+View Answer:
+Interview Response: The next() method returns an object with two properties, “done” and value. The done property returns false if a value exists; otherwise, true if the value returns undefined.
+
+
+What differentiates a generator from an iterator?
+
+generators unlike other custom iterators can help you avoid infinite loop
+
+If you attempt to use the return keyword to return a value at the end of a generator. What happens when you iterate over the values with a for…of loop?
+
+the last value that is return will not be yiedl as the done property will be set to true.
+
+Are function generators iterable in JavaScript?
+
+yes
+
+Generator functions do not initially execute their code when called. Instead, they return a particular type of iterator, called a Generator. The function can be called as many times as desired and returns a new Generator each time. Each generator iterates once.
+
+
