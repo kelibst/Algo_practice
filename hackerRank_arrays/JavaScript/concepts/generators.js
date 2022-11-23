@@ -1,5 +1,4 @@
-https://github.com/Narahari-Sundaragopalan/JavaScript-Interview-Questions/blob/master/concepts/Iterators.md
-
+// https://github.com/Narahari-Sundaragopalan/JavaScript-Interview-Questions/blob/master/concepts/Iterators.md
 
 // function* makeRangeIterator(start = 0, end = 100, step = 1) {
 //   let iterationCount = 0;
@@ -54,17 +53,46 @@ function* iterArr(array) {
   }
 }
 
-function nextIterator(array) {
-  let res = 0;
-  let myIt = iterArr(array);
-  let myItVal = myIt.next().value;
-  console.log((res += myItVal));
-}
+const returnIterator = (arr) => {
+  let myIter = iterArr(arr);
+
+  const inner = {
+    interVal: myIter.next(),
+    next: () => {
+      return myIter.value;
+    },
+  };
+};
 
 const array3 = [1, 2, 3];
 const iteratorWithNext = iterArr(array3);
-console.log(iteratorWithNext.next());
+console.log(iteratorWithNext);
 
-// console.log(iteratorWithNext.next()); // -> should log 1
-// console.log(iteratorWithNext.next()); // -> should log 2
-// console.log(iteratorWithNext.next()); // -> should log 3
+console.log(iteratorWithNext.next()); // -> should log 1
+console.log(iteratorWithNext.next()); // -> should log 2
+console.log(iteratorWithNext.next()); // -> should log 3
+
+// Configure Object.prototype such that the following code:
+
+Object.prototype[Symbol.iterator] = function () {
+  return Object.keys(this)[Symbol.iterator]();
+};
+
+var o = { x: 10, y: 20, z: 30 };
+
+for (var k of o) {
+  console.log(o[k]);
+}
+
+function* gen() {
+  var a = yield 10;
+  var b = yield a + 5;
+  yield b;
+}
+
+var seq = gen();
+// what will each of these return?
+console.log(seq.next(15));
+console.log(seq.next(60));
+console.log(seq.next(32));
+console.log(seq.next(4));
