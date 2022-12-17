@@ -24,3 +24,8 @@ yes
 Generator functions do not initially execute their code when called. Instead, they return a particular type of iterator, called a Generator. The function can be called as many times as desired and returns a new Generator each time. Each generator iterates once.
 
 
+Now for the exciting part, recall that generators are also iterable in nature and so we can provide generator expressions to yield* inside another generator.
+
+In other words, we can work with generators inside generators.
+
+This is what we call generator delegation.
